@@ -29,8 +29,8 @@ class SimpleCipherTest(unittest.TestCase):
     @pytest.mark.skip
     def test_decode_wraps_a_to_z(self):
         cipher = Cipher()
-        plaintext = 'z'
-        ciphertext = 'a'
+        plaintext = 'a'
+        ciphertext = 'z'
         self.assertEqual(ciphertext, cipher.decode(plaintext))
 
     @pytest.mark.skip
