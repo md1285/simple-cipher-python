@@ -3,8 +3,7 @@ class Cipher():
   def encode(self, string, shift = 1):
     try:
       # redefine arguments
-      while shift > 26:
-        shift -= 26
+      shift = shift % 26
       alphabet = list('abcdefghijklmnopqrstuvwxyz')
       def find_letter_idx(letter):
         return alphabet.index(letter)
@@ -18,14 +17,13 @@ class Cipher():
           res.append(alphabet[((num + shift) % 25) - 1])
       # return result
       return ''.join(res)
-    except (err):
-      raise Exception('An error occurred: ' + err)
+    except:
+      raise Exception('An error occurred: invalid input.')
 
   def decode(self, string, shift = 1):
     try:
       # redefine arguments
-      while shift > 26:
-        shift -= 26
+      shift = shift % 26
       alphabet = list('abcdefghijklmnopqrstuvwxyz')
       def find_letter_idx(letter):
         return alphabet.index(letter)
@@ -39,5 +37,5 @@ class Cipher():
           res.append(alphabet[((num - shift) % 25) - 1])
       # return result
       return ''.join(res)
-    except (err):
-      raise Exception('An error occurred: ' + err)
+    except:
+      raise Exception('An error occurred: invalid input.')
