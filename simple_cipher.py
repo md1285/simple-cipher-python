@@ -1,9 +1,10 @@
 class Cipher():
+
   def encode(self, string, shift = 1):
     try:
       # redefine arguments
       while shift > 26:
-        shift = shift - 26
+        shift -= 26
       alphabet = list('abcdefghijklmnopqrstuvwxyz')
       def find_letter_idx(letter):
         return alphabet.index(letter)
@@ -24,7 +25,7 @@ class Cipher():
     try:
       # redefine arguments
       while shift > 26:
-        shift = shift - 26
+        shift -= 26
       alphabet = list('abcdefghijklmnopqrstuvwxyz')
       def find_letter_idx(letter):
         return alphabet.index(letter)
